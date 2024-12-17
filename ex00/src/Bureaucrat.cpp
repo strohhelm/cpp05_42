@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:20:50 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/12/13 19:44:23 by pstrohal         ###   ########.fr       */
+/*   Updated: 2024/12/16 17:45:57 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::Bureaucrat(std::string name, int grade) :_name(name)
 {
 	if (grade < 1)
+	{
 		throw Bureaucrat::GradeTooHighException();
+	}
 	else if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
 	_grade = grade;

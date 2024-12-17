@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 19:55:25 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/12/17 19:05:54 by pstrohal         ###   ########.fr       */
+/*   Updated: 2024/12/17 20:26:22 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "../inc/Form.hpp"
+#include "../inc/AForm.hpp"
 
 /* ************************************************************************** */
 /*		CONSTRUCTORS, DESTRUCTORS											  */
 /* ************************************************************************** */
 
 //Default constructor
-Form::Form()
+AForm::AForm()
 	:_name("<default from 0815>"),
 	_isSigned(false),
 	_gradeToSign(150),
@@ -27,52 +27,58 @@ Form::Form()
 void check_valid(int gradeSign, int gradeExecute)
 {
 	if (gradeSign < 1 || gradeExecute < 1)
-		throw Form::GradeTooHighException();
+		throw AForm::GradeTooHighException();
 	else if (gradeSign > 150 || gradeExecute > 150)
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 }
 //Value constructor
-Form::Form(std::string name, int gradeSign, int gradeExecute)
+AForm::AForm(std::string name, int gradeSign, int gradeExecute, std::string target)
 	:_name(name),
 	 _isSigned(false),
 	 _gradeToSign(gradeSign),
-	 _gradeToExecute(gradeExecute)
+	 _gradeToExecute(gradeExecute),
+	 _target(target)
 {
 	check_valid(gradeSign, gradeExecute);
-	// std::cout<<*this<<"was constructed!\n";
+	std::cout<<*this<<"was constructed!\n";
 }
 
 // Copy constructor
-Form::Form(const Form& src)
+AForm::AForm(const AForm& src)
 :_name(src._name),
 	_isSigned(false),
 	_gradeToSign(src._gradeToSign),
-	_gradeToExecute(src._gradeToExecute)
+	_gradeToExecute(src._gradeToExecute),
+	_target(src._target)
 {
 	//safety only for accidental invalid src values
 	check_valid(_gradeToSign, _gradeToExecute);
 }
 // Default destructor
-Form::~Form(){}
+AForm::~AForm(){}
 
 /* ************************************************************************** */
 /*		EXCEPTION OVERLOADS													  */
 /* ************************************************************************** */
 
 
-const char *Form::GradeTooHighException::what(void) const throw()
+const char *AForm::GradeTooHighException::what(void) const throw()
 {
-	return ("\033[31mFORM ERROR! Grade too high!\n\033[0m");
+	return ("\033[31mAFORM ERROR! Grade too high!\n\033[0m");
 }
 
-const char *Form::GradeTooLowException::what(void) const throw()
+const char *AForm::GradeTooLowException::what(void) const throw()
 {
-	return ("\033[31mFORM ERROR! Grade too low!\n\033[0m");
+	return ("\033[31mAFORM ERROR! Grade too low!\n\033[0m");
 }
 
-const char *Form::AlreadySignedException::what(void) const throw()
+const char *AForm::AlreadySignedException::what(void) const throw()
 {
-	return ("\033[31mFORM ERROR! This form is already signed!\n\033[0m");
+	return ("\033[31mAFORM ERROR! This Aform is already signed!\n\033[0m");
+}
+const char *AForm::NotSignedException::what(void) const throw()
+{
+	return ("\033[31mAFORM ERROR! This Aform is not signed!\n\033[0m");
 }
 
 /* ************************************************************************** */
@@ -82,9 +88,9 @@ const char *Form::AlreadySignedException::what(void) const throw()
 // Copy assignment operator overload is deleted!
 
 // Insertion assignment operator overload
-std::ostream &operator<<(std::ostream &ostream, const Form &src)
+std::ostream &operator<<(std::ostream &ostream, const AForm &src)
 {
-	ostream << "Form name: "<<Y<<src.getName()<< X<<" | ";
+	ostream << "AForm name: "<<Y<<src.getName()<< X<<" | ";
 	ostream << "Signed: " << B<<src.getSigned()<<X<<" | ";
 	ostream << "Grade to Sign: " << B<<src.getGradeSign()<<X<<" | ";
 	ostream << "Grade to Execute: " << B<<src.getGradeExecute()<<X<<" ";
@@ -96,32 +102,38 @@ std::ostream &operator<<(std::ostream &ostream, const Form &src)
 /*			MEMBER FUNCTIONS												  */
 /* ************************************************************************** */
 
-void Form::beSigned(Bureaucrat &Bur)
+void AForm::beSigned(Bureaucrat &Bur)
 {
 	if (Bur.getGrade() > this->_gradeToSign)
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 	else if (_isSigned)
-		throw Form::AlreadySignedException();
+		throw AForm::AlreadySignedException();
 	_isSigned = true;
 }
-
+void	AForm::_isExecutable(int grade)
+{
+	if (!_isSigned)
+		throw AForm::NotSignedException();
+	else if (grade > _gradeToExecute)
+		throw AForm::GradeTooLowException();
+}
 // - - - - - - GETTERS -  - - - - - - - - - - - - - - - - - - - - - - - - - - -
-std::string	Form::getName(void) const
+std::string	AForm::getName(void) const
 {
 	return (_name);
 }
 
-std::string	Form::getSigned(void) const
+std::string	AForm::getSigned(void) const
 {
 	if (_isSigned)
 		return ("Yes");
 	return ("No ");
 }
-int	Form::getGradeSign(void) const
+int	AForm::getGradeSign(void) const
 {
 	return (_gradeToSign);
 }
-int	Form::getGradeExecute(void) const
+int	AForm::getGradeExecute(void) const
 {
 	return (_gradeToExecute);
 	

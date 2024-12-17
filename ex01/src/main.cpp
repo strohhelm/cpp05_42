@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 18:22:50 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/12/13 19:43:24 by pstrohal         ###   ########.fr       */
+/*   Updated: 2024/12/17 19:05:37 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,55 +14,34 @@
 
 int main (void)
 {
-	Bureaucrat Inge("Inge", 2);
-	Bureaucrat Anton("Anton", 26);
-	Bureaucrat Peter("Peter", 150);
+	Form f("Wierd Form", 50, 4);
+	Bureaucrat Frank("Frank", 51);
 	try {
-		Bureaucrat Peter("Peter", 150);}
-	catch (std::exception &e){
-		std::cout<<e.what();}
-		
-	try {
-		Bureaucrat Herbert("Herbert", 151);}
-	catch (std::exception &e){
-		std::cout<<e.what();}
-		
-	try {
-		Bureaucrat Friedrich("Friedrich", 0);}
-	catch (std::exception &e){
-		std::cout<<e.what();}
-		
-	try {
-		Bureaucrat Hildegard("Hildegard", -15);}
-	catch (std::exception &e){
-		std::cout<<e.what();}
-
-	std::cout<<R<<"\n------------------\n"<<X;
-	std::cout<<M<<"before incrementing:\n"<<X<< Peter<<"\n" << Anton <<"\n"<< Inge<<"\n";
-	Peter.incrementGrade();
-	Anton.incrementGrade();
-	Inge.incrementGrade();
-	std::cout<<M<<"after:\n"<<X<< Peter<<"\n"<< Anton <<"\n"<< Inge<<"\n";
+		Form g("invalid form", 1, 151);
+	}
+	catch (std::exception &e)
+	{
+		std::cout<<e.what();
+	}
 	
+	Frank.signForm(f);
+	std::cout<<f<<std::endl;
+	Form a;
+	// a = f; //not possible bc deleted copy assignment operator
 	
-	std::cout<<R<<"\n------------------\n"<<X;
-	std::cout<<M<<"before decrementing:\n"<<X<< Peter<<"\n" << Anton <<"\n"<< Inge<<"\n";
-	Peter.decrementGrade();
-	Anton.decrementGrade();
-	Inge.decrementGrade();
-	std::cout<<M<<"after:\n"<<X<< Peter<<"\n" << Anton <<"\n"<< Inge<<"\n";
-	
-	std::cout<<R<<"\n------------------\n"<<X;
-	std::cout<<M<<"before decrementing too much:\n"<<X<< Peter<<"\n";
-	try{Peter.decrementGrade();}
-	catch (std::exception &e){std::cout<<e.what();}
-	std::cout<<M<<"after:\n"<<X<< Peter<<"\n";
-	
-	std::cout<<R<<"\n------------------\n"<<X;
-	Inge.incrementGrade();
-	std::cout<<M<<"before incrementing too much:\n"<<X<< Inge<<"\n";
-	try{Inge.incrementGrade();}
-	catch (std::exception &e){std::cout<<e.what();}
-	std::cout<<M<<"after:\n"<<X<< Inge<<"\n";
+	Form b ("Most Important Form", 1, 1);
+	Frank.signForm(b);
+	Bureaucrat Dieter("Dieter", 1);
+	Dieter.signForm(b);
+	Dieter.signForm(b);
+	Dieter.decrementGrade();
+	std::cout<<Dieter<<std::endl;
+	Form d(b);
+	std::cout<<b<<std::endl;
+	std::cout<<d<<std::endl;
+	Dieter.signForm(d);
+	Dieter.incrementGrade();
+	std::cout<<Dieter<<std::endl;
+	Dieter.signForm(d);
 	return (0);
 }

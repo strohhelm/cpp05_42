@@ -6,7 +6,7 @@
 #    By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/05 14:29:43 by pstrohal          #+#    #+#              #
-#    Updated: 2024/12/16 17:35:16 by pstrohal         ###   ########.fr        #
+#    Updated: 2024/12/17 19:07:29 by pstrohal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ vpath %.d $(DEP_DIR)
 
 
 FILES =	main.cpp \
-		Form.cpp \
+		AForm.cpp \
 		Bureaucrat.cpp
 
 SRC = $(addprefix $(SRC_DIR)/, $(FILES))

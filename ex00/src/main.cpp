@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 18:22:50 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/12/13 19:43:24 by pstrohal         ###   ########.fr       */
+/*   Updated: 2024/12/16 17:45:40 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ int main (void)
 	Bureaucrat Anton("Anton", 26);
 	Bureaucrat Peter("Peter", 150);
 	try {
-		Bureaucrat Peter("Peter", 150);}
+		Bureaucrat Peter("Hans", 150);}
+	catch (std::exception &e){
+		std::cout<<e.what();}
+	try {
+		Bureaucrat Peter("Heinrich", 120);}
 	catch (std::exception &e){
 		std::cout<<e.what();}
 		

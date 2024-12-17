@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:20:50 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/12/17 19:04:42 by pstrohal         ###   ########.fr       */
+/*   Updated: 2024/12/17 19:08:53 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) :_name(name)
 	else if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
 	_grade = grade;
-	// std::cout<<*this<<" was constructed!\n";
+	std::cout<<*this<<" was constructed!\n";
 }
 
 // Copy constructor
@@ -85,7 +85,7 @@ std::ostream &operator<<(std::ostream &ostream, const Bureaucrat &src)
 /*			MEMBER FUNCTIONS												  */
 /* ************************************************************************** */
 
-void	Bureaucrat::signForm(Form &form)
+void	Bureaucrat::signForm(AForm &form)
 {
 	try
 	{
