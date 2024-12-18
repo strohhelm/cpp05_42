@@ -6,7 +6,7 @@
 #    By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/05 14:29:43 by pstrohal          #+#    #+#              #
-#    Updated: 2024/12/17 19:07:29 by pstrohal         ###   ########.fr        #
+#    Updated: 2024/12/18 15:28:46 by pstrohal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,10 @@ vpath %.d $(DEP_DIR)
 
 FILES =	main.cpp \
 		AForm.cpp \
-		Bureaucrat.cpp
+		Bureaucrat.cpp \
+		ShrubberyCreationForm.cpp \
+		RobotomyRequestForm.cpp \
+		PresidentialPardonForm.cpp
 
 SRC = $(addprefix $(SRC_DIR)/, $(FILES))
 OBJ =	$(addprefix $(OBJ_DIR)/, $(FILES:%.cpp=%.o))

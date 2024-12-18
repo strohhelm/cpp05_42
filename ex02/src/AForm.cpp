@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 19:55:25 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/12/17 20:26:22 by pstrohal         ###   ########.fr       */
+/*   Updated: 2024/12/18 15:43:52 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,21 +64,21 @@ AForm::~AForm(){}
 
 const char *AForm::GradeTooHighException::what(void) const throw()
 {
-	return ("\033[31mAFORM ERROR! Grade too high!\n\033[0m");
+	return ("\033[31mERROR! Grade too high!\033[0m");
 }
 
 const char *AForm::GradeTooLowException::what(void) const throw()
 {
-	return ("\033[31mAFORM ERROR! Grade too low!\n\033[0m");
+	return ("\033[31mERROR! Grade too low!\033[0m");
 }
 
 const char *AForm::AlreadySignedException::what(void) const throw()
 {
-	return ("\033[31mAFORM ERROR! This Aform is already signed!\n\033[0m");
+	return ("\033[31mERROR! This Aform is already signed!\033[0m");
 }
 const char *AForm::NotSignedException::what(void) const throw()
 {
-	return ("\033[31mAFORM ERROR! This Aform is not signed!\n\033[0m");
+	return ("\033[31mERROR! This Form is not signed!\033[0m");
 }
 
 /* ************************************************************************** */
@@ -110,7 +110,7 @@ void AForm::beSigned(Bureaucrat &Bur)
 		throw AForm::AlreadySignedException();
 	_isSigned = true;
 }
-void	AForm::_isExecutable(int grade)
+void	AForm::_isExecutable(int grade) const
 {
 	if (!_isSigned)
 		throw AForm::NotSignedException();

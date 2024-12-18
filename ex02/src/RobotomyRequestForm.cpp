@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 19:57:21 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/12/17 20:27:18 by pstrohal         ###   ########.fr       */
+/*   Updated: 2024/12/18 15:16:07 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 /* ************************************************************************** */
 
 //Default constructor
-RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 145, 137, "default target") {}
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45, "default target") {}
 
 
 //Value constructor
-RobotomyRequestForm::RobotomyRequestForm(std::string &target)
-	: AForm("RobotomyRequestForm", 145, 137, target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target)
+	: AForm("RobotomyRequestForm", 72, 45, target)
 {
 	std::cout<<*this<<"was constructed!"<<std::endl;
 }
@@ -34,23 +34,32 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm& src) : AForm(src) 
 RobotomyRequestForm::~RobotomyRequestForm(){}
 
 /* ************************************************************************** */
-/*		EXCEPTION OVERLOADS													  */
-/* ************************************************************************** */
-
-
-/* ************************************************************************** */
-/*		OPERATOR OVERLOADS													  */
-/* ************************************************************************** */
-
-// Copy assignment operator overload is deleted!
-
-// Insertion assignment operator overload
-
-/* ************************************************************************** */
 /*			MEMBER FUNCTIONS												  */
 /* ************************************************************************** */
 
-void	execute(Bureaucrat const & executor)
+void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	_e
+	static bool chance = false;
+
+	_isExecutable(executor.getGrade());
+	std::cout	<<O
+				<<O<<"VRRRRRRRRR— CLUNK... uh-oh. BRRRRRRRRRRZZZT— THUNK-THUNK-THUNK...\n"<<X
+				<<M<<"‘C’mon, you bucket of bolts!’"<<O<<" ... DZZZZZT-DZZZZZT... \n"<<X
+				<<M<<"‘Why do you always jam on Mondays?’"<<O<<" ... WHIRRRRRRR— SKREEEEEEE!... \n"<<X
+				<<M<<"‘No, no, no! That’s not a good noise!’"<<O<<"... KRRRRRRCHHHHHH— sputter... \n"<<X
+				<<M<<"‘I swear, this thing has a mind of its own.’"<<O<<" ... BRRRRRRRRRR-KRRRCHHH-CHNK-CHNK... \n"<<X
+				<<"pause...\n"
+				<<M<<"‘I’m not paid enough for this.’"<<O<<" ... VRRRRRRRRRRZZZ— THUD...\n"
+				<<M<<"‘Oh, great. Now you’re stuck.’" <<X<<std::endl;
+	if (chance)
+	{
+		std::cout<<DG<<_target<<G<<" has been robotomized successfully!"<<X<<std::endl;
+		chance = false;
+	}
+	else
+	{
+		std::cout<<DR<<_target<<R<<" has not been robotomized. It failed miserably!"<<X<<std::endl;
+		chance = true;
+	}
+	return ;
 }

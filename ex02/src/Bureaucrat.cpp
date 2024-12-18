@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:20:50 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/12/17 19:08:53 by pstrohal         ###   ########.fr       */
+/*   Updated: 2024/12/18 15:45:00 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,22 @@ void	Bureaucrat::signForm(AForm &form)
 	}
 	std::cout<<DG<<_name <<G<< " signed "<< DG<<form.getName()<<X<<std::endl;
 }
+
+void	Bureaucrat::executeForm(AForm const & form)
+{
+	try {form.execute(*this);}
+	catch (std::exception &e){
+		std::cout	<<DR<<_name
+					<<R<<" could not execute "
+					<<DR<<form.getName()
+					<<R<<" reason: "<<DR
+					<<e.what()
+					<<std::endl;
+		return;
+	}
+	std::cout<<DG<<_name<<G<<" executed "<<DG<<form.getName()<<std::endl;
+}
+
 
 void	Bureaucrat::incrementGrade(void)
 {

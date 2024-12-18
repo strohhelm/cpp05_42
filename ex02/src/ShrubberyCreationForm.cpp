@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 19:57:47 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/12/17 21:00:53 by pstrohal         ###   ########.fr       */
+/*   Updated: 2024/12/18 15:46:27 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 
 
 
 //Value constructor
-ShrubberyCreationForm::ShrubberyCreationForm(std::string &target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 	: AForm("ShrubberyCreationForm", 145, 137, target)
 {
 	std::cout<<*this<<"was constructed!"<<std::endl;
@@ -50,22 +50,13 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){}
 /*			MEMBER FUNCTIONS												  */
 /* ************************************************************************** */
 
-void	ShrubberyCreationForm::execute(Bureaucrat const & executor)
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	std::ofstream	outFile;
-	std::string		outname = _target + "_shrubbery";
+	std::string		outname = _target + "_shrubbery.txt";
 
-	try {_isExecutable(executor.getGrade());}
-	catch (std::exception &e){
-		std::cout	<<DR<<executor
-					<<R<<" could not sign "
-					<<DR<<_name
-					<<R<<" reason: "<<DR
-					<<e.what()
-					<<std::endl;
-		return;
-	}
-	
+	_isExecutable(executor.getGrade());
+
 	try {
 		outFile.open(outname, std::ios::trunc);
 		if (!outFile.is_open())
@@ -85,7 +76,155 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor)
 	outFile<< "        " << Y << "|" << X << "\n";
 	outFile<< "        " << Y << "|" << X << "\n";
 	outFile<< "\n" << D << "   Merry " << R << "C" << DG << "h" << DR << "r" << P << "i" << LP << "s" << L << "t" << D << "m" << Y << "a" << O << "s" << X << "!" << "\n\n";
+	outFile << "         "  << "*"  << "\n"<<std::endl;
+    outFile << "        " << L << "/\\\\" << X << "\n";
+    outFile << "       " << G << "/  \\\\" << X << "\n";
+    outFile << "      " << L << "/ " << R << "o" << L << "  \\\\" << X << "\n";
+    outFile << "     " << G << "/______\\\\" << X << "\n";
+    outFile << "    " << L << "/\\   " << R << "o" << L << "  /\\\\" << X << "\n";
+    outFile << "   " << G << "/  \\" << L << "    " << G << "/  \\\\" << X << "\n";
+    outFile << "  " << L << "/ " << DR << "o " << L << " " << G << "\\  /" << R << "o    " << G << "\\\\" << X << "\n";
+    outFile << " " << G << "/____" << L << "__\\/_" << G << " " << X << "\n";
+    outFile << "        " << Y << "|" << X << "\n";
+    outFile << "        " << Y << "|" << X << "\n";
 
+    outFile << "\n" << D << "   Merry " << R << "C" << DG << "h" << DR << "r" << P << "i" << LP << "s" << L << "t" << D << "m" << Y << "a" << O << "s" << X << "!" << "\n\n" <<std::endl;
+
+	outFile << Y << "              *\n" << X;
+    outFile << L << "             /\\ \n" << X;
+    outFile << G << "            /  \\\n" << X;
+    outFile << L << "           / " << R << "o" << L << "  \\\n" << X;
+    outFile << G << "          /____\\\n" << X;
+    outFile << L << "         /\\ " << R << "o" << L << " /\\ \n" << X;
+    outFile << G << "        /  \\  /  \\\n" << X;
+    outFile << L << "       / " << DR << "o" << L << "  /\\  " << R << "o" << L << " \\\n" << X;
+    outFile << G << "      /____/__\\____\\\n" << X;
+    outFile << L << "     /\\  " << R << "o" << L << "   " << DG << "o" << L << "    /\\\n" << X;
+    outFile << G << "    /  \\     " << DR << "o" << G << "     /  \\\n" << X;
+    outFile << L << "   / " << R << "o" << L << "   \\_______/ " << R << "o" << L << "   \\\n" << X;
+    outFile << G << "  /____/\\   " << DG << "o" << G << "   /\\____\\\n" << X;
+    outFile << L << "        \\_______/\n" << X;
+    outFile << Y << "           |||\n" << X;
+    outFile << Y << "           |||\n" << X;
+	
+	outFile<<"                                 |L   \n\
+	                                ,' `  \n\
+	                               /.o `,    \n\
+	                               `, |-`,   \n\
+	                              -',    '   \n\
+	                             `,'_)   '\n\
+	                             ,'    `-`,  \n\
+	                            _`o,-   (_) \n\
+	                           '_ '    o  `-,\n\
+	                           /   ,-L   `-' \n\
+	                          _`-`_     ,  `'.\n\
+	                         ;.  (,'  `| `.-. \\\n\
+	                         ,``_'    (_)  o `'\n\
+	                        ,` '_  ,|\\   o   _ \n\
+	                       /..-(_)' |','..-`(_)-`\n\
+	                                |  |        \n\
+	                       __--__ --'  `--__ "<<std::endl;
+	
+	outFile<<"\n\
+	                            / \\\n\
+	                           J   L\n\
+	                     ------'   `------\n\
+	                      `.           .'\n\
+	                        `.       .'\n\
+	                         /       \\\n\
+	                        J   .'.   L\n\
+	                        |.' | |`. |\n\
+	                        '   | |//`\n\
+	                       .-.-. _ _ _  |\n\
+	                      /| | |(/|||||_|\n\
+	                      _| | |/-'`'`'/|\n\
+	                     /\\/|   o  + __.- /(\n\
+	                    |  '|/| -|/(||||(_V_)\n\
+	                    `._.| |/_/_)`-'' ///_<\n\
+	                        >///\\\\\\//==<<<=\n\
+	                      _ >>>\\\\>//<__<<<-'\n\
+	                     / `-._>>>.-'   |<<\n\
+	                    J     _.))     /<<<<\n\
+	                v   |  .-'' |/__   |<<<||_\n\
+	             \\\\||| `-> _/ / \\  `-<<<<<<*** **\n\
+	           \\\\**|||| /    /><<\\    \\<<<********\n\
+	             >>**////    /<>>>>`.   |****** <<_\\_\n\
+	              >>***/_  .'>>><>>><\\  |*****<<<|_|_|\n\
+	           .-' >***>>|/>//>><\\**|/\\|***<<<<<|_|_|\n\
+	          \\.-' \\***<<<>>///\\\\******<<>><>>*****\\\\\\-.-.-<<<\n\
+	            \\-'_.J--.<<<<>><<****>>///(\\|\\)|(//<<<,\n\
+	           (   )|(-'  (>>><<****<\\)_.><<<<-\n\
+	          .-`-'_)\\-.--.\\>>><*****//||>(\\ (\\_.\\<<<< .-\n\
+	         .' _.-'()\\`.**>>//****<<<>><<`-``-``-`<<.-' _\n\
+	     .--'_.'>>>><>>`.\\***(`._.-.<<<<<<(_____``<.'_.-' |<\n\
+	    /-'   >><<>>>>>//<>>>/|\\ |  /<<>><|     `-._/      L\n\
+	           ->>.<>><>>>>>/|| \\|.'|<<>\\|  .-----'|._    |\n\
+	   .--._ >><.' \\>>>>>>///||  |  |<<>><|.'       )-----'`.\n\
+	   |   _.--'    |///////\\\\-----'<>>>>>==\\<><>>>>< ===::===\\'\n\
+	  /    .'>><>>)_ -->>>>===::::==>>******|/>>>/  `.  .--.`-.|\n\
+	 /    />>>>>>>'`'`'`-`<===:::<<< *****(\\ .-.<(   )-(   )\n\
+	/.'| />>>>>>>.-.-.-._\\|> =//||\\******-'@--'>>`-'<<\\`-'`._\n\
+	   |/>>>>>>>-'`'`'`-.\\>>==<<<<***.'\\ |_|)_|<<<<<<< \\_ `- `.\n\
+	  / >>>>>>.-..''`'`-.\\.->>>><<>(  /(\\\\/// <<<<<=    \\_ .-'\n\
+	 /-' >>>----\\((::::)))// /><>>**|   (\\\\///<<<<---.\n\
+	|.'  >>>| | | |\\__.'.'>>>>>****.'/ (\\\\////<<<<-`-`\n\
+	 `   >>>|-|-| |>>>>>>>>>>**** .--. /_\\\\////<<<|_|_|<<<\n\
+	     >>>|_|_|/>><>><<>*****vv(    V  `.\\<<<>>>|_|_|<<<<\n\
+	     ////>>>>>`.>>>>******>>><`--'\\   /<<<<<>>>>><<<<<<<\n\
+	     '' ///>>>>><<>>*****>>>><<<<<<`-'<<<<<<>><<<><<<<<<<\n\
+	       ''    ->>>>><<>///>>>>><<<<<<\\\\\\><<<<<>>><<<<\\\n\
+	               ////<<>><<<>>>><<<<>\\\\\\\\\\>><\\\\\\\\\n\
+	              '' / ////////>>><<<\\\\\\\\\\<  \\\\ \\\\\n\
+	                   /|| .////|||\\\\\\\\\\\n\
+	                      (MMMMMMMMMMMMMMMMMMM)\n\
+	                      |`----.MMMMMMMM.---'|\n\
+	                      `---.____   ____.---'\n\
+	                       |       '''       |\n\
+	                       |                 |\n\
+	                       |                 |\n\
+	                       |                 |\n\
+	                       |                 |\n\
+	                       (                 )\n\
+	                        `----._____.----'\n\n\n";
+	
+	outFile<<"                                    # #### ####\n";
+	outFile<<"                                ### \\/#|### |/####\n";
+	outFile<<"                               ##\\/#/ \\||/##/_/##/_#\n";
+	outFile<<"                             ###  \\/###|/ \\/ # ###\n";
+	outFile<<"                           ##_\\_#\\_\\## | #/###_/_####\n";
+	outFile<<"                          ## #### # \\ #| /  #### ##/##\n";
+	outFile<<"                           __#_--###`  |{,###---###-~\n";
+	outFile<<"                                     \\ }{\n";
+	outFile<<"                                      }}{\n";
+	outFile<<"                                      }}{\n";
+	outFile<<"                                 ejm  {{}\n";
+	outFile<<"                                , -=-~{ .-^- _\n";
+	outFile<<"                                      `}\n";
+	outFile<<"                                       {\n\n\n"<<std::endl;
+	
+	outFile<<"                        ___\n";
+	outFile<<"                  _,-'\"\"   \"\"\"\"`--.\n";
+	outFile<<"               ,-'          __,,-- \\\n";
+	outFile<<"             ,'    __,--\"\"\"\"dF      )\n";
+	outFile<<"            /   .-\"Hb_,--\"\"dF      /\n";
+	outFile<<"          ,'       _Hb ___dF\"-._,-'\n";
+	outFile<<"        ,'      _,-\"\"\"\"   \"\"--..__\n";
+	outFile<<"       (     ,-'                  `.\n";
+	outFile<<"        `._,'     _   _             ;\n";
+	outFile<<"         ,'     ,' `-'Hb-.___..._,-'\n";
+	outFile<<"         \\    ,'\"Hb.-'HH`-.dHF\"\n";
+	outFile<<"          `--'   \"Hb  HH  dF\"\n";
+	outFile<<"                  \"Hb HH dF\n";
+	outFile<<"                   \"HbHHdF\n";
+	outFile<<"                    |HHHF\n";
+	outFile<<"                    |HHH|\n";
+	outFile<<"                    |HHH|\n";
+	outFile<<"                    |HHH|\n";
+	outFile<<"                    |HHH|\n";
+	outFile<<"                    dHHHb\n";
+	outFile<<"                  .dFd|bHb.\n";
+	outFile<<"   ______       .dHFdH|HbTHb.    ____\n";
+	outFile<<"  /      \\__,dHHFdHH|HHhoHHb.___/    \\\n";
+	outFile<<"  ##########################################\n";
 	outFile.close();
-	std::cout<<DG<<executor.getName()<<G" executed"<<DG<<_name;
-}
+	}

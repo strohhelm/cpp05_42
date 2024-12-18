@@ -18,13 +18,14 @@
 
 class RobotomyRequestForm : public AForm
 {
+	public:
 	RobotomyRequestForm();
 	RobotomyRequestForm(std::string target);
 	RobotomyRequestForm(RobotomyRequestForm &src);
 	~RobotomyRequestForm();
 	RobotomyRequestForm &operator=(RobotomyRequestForm &src) = delete;
 	
-	void	execute(Bureaucrat const & executor);
+	void	execute(Bureaucrat const & executor) const;
 };
 
 #endif

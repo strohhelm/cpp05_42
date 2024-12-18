@@ -17,13 +17,14 @@
 
 class PresidentialPardonForm : public AForm
 {
+	public:
 	PresidentialPardonForm();
 	PresidentialPardonForm(std::string target);
 	PresidentialPardonForm(PresidentialPardonForm &src);
 	~PresidentialPardonForm();
 	PresidentialPardonForm &operator=(PresidentialPardonForm &src) = delete;
 	
-	void	execute(Bureaucrat const & executor);
+	void	execute(Bureaucrat const & executor) const;
 };
 
 #endif

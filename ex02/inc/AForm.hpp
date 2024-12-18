@@ -67,10 +67,10 @@ class AForm
 		int			getGradeExecute(void) const;
 
 		void			beSigned(Bureaucrat &Bur);
-		virtual void	execute(Bureaucrat const & executor) = 0;
+		virtual void	execute(Bureaucrat const &executor) const = 0;
 
 	protected:
-		void				_isExecutable(int grade);
+		void				_isExecutable(int grade) const;
 		const std::string	_name;
 		bool				_isSigned;
 		const int			_gradeToSign;
