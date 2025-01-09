@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 19:55:25 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/12/17 19:05:54 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/09 12:39:08 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,6 @@ Form::Form()
 	_gradeToSign(150),
 	_gradeToExecute(150){};
 
-void check_valid(int gradeSign, int gradeExecute)
-{
-	if (gradeSign < 1 || gradeExecute < 1)
-		throw Form::GradeTooHighException();
-	else if (gradeSign > 150 || gradeExecute > 150)
-		throw Form::GradeTooLowException();
-}
 //Value constructor
 Form::Form(std::string name, int gradeSign, int gradeExecute)
 	:_name(name),
@@ -125,4 +118,12 @@ int	Form::getGradeExecute(void) const
 {
 	return (_gradeToExecute);
 	
+}
+
+void Form::check_valid(int gradeSign, int gradeExecute)
+{
+	if (gradeSign < 1 || gradeExecute < 1)
+		throw Form::GradeTooHighException();
+	else if (gradeSign > 150 || gradeExecute > 150)
+		throw Form::GradeTooLowException();
 }

@@ -71,12 +71,12 @@ class AForm
 
 	protected:
 		void				_isExecutable(int grade) const;
+		void				_check_valid(int gradeSign, int gradeExecute);
 		const std::string	_name;
 		bool				_isSigned;
 		const int			_gradeToSign;
 		const int			_gradeToExecute;
 		const std::string	_target;
 };
-void check_valid(int gradeSign, int gradeExecute);
 std::ostream &operator<<(std::ostream &ostream, const AForm &src);
 #endif

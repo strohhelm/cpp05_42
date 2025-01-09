@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 19:57:21 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/12/18 15:16:07 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/09 15:18:08 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45
 RobotomyRequestForm::RobotomyRequestForm(std::string target)
 	: AForm("RobotomyRequestForm", 72, 45, target)
 {
-	std::cout<<*this<<"was constructed!"<<std::endl;
+	// std::cout<<*this<<"was constructed!"<<std::endl;
 }
 
 // Copy constructor
@@ -41,6 +41,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	static bool chance = false;
 
+	std::srand(0);
 	_isExecutable(executor.getGrade());
 	std::cout	<<O
 				<<O<<"VRRRRRRRRR— CLUNK... uh-oh. BRRRRRRRRRRZZZT— THUNK-THUNK-THUNK...\n"<<X
@@ -51,7 +52,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 				<<"pause...\n"
 				<<M<<"‘I’m not paid enough for this.’"<<O<<" ... VRRRRRRRRRRZZZ— THUD...\n"
 				<<M<<"‘Oh, great. Now you’re stuck.’" <<X<<std::endl;
-	if (chance)
+	if ((std::rand() % 2) != 0)
 	{
 		std::cout<<DG<<_target<<G<<" has been robotomized successfully!"<<X<<std::endl;
 		chance = false;

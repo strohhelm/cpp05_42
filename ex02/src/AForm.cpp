@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 19:55:25 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/12/18 15:43:52 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:37:44 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,6 @@ AForm::AForm()
 	_gradeToSign(150),
 	_gradeToExecute(150){};
 
-void check_valid(int gradeSign, int gradeExecute)
-{
-	if (gradeSign < 1 || gradeExecute < 1)
-		throw AForm::GradeTooHighException();
-	else if (gradeSign > 150 || gradeExecute > 150)
-		throw AForm::GradeTooLowException();
-}
 //Value constructor
 AForm::AForm(std::string name, int gradeSign, int gradeExecute, std::string target)
 	:_name(name),
@@ -39,7 +32,7 @@ AForm::AForm(std::string name, int gradeSign, int gradeExecute, std::string targ
 	 _gradeToExecute(gradeExecute),
 	 _target(target)
 {
-	check_valid(gradeSign, gradeExecute);
+	_check_valid(gradeSign, gradeExecute);
 	std::cout<<*this<<"was constructed!\n";
 }
 
@@ -52,7 +45,7 @@ AForm::AForm(const AForm& src)
 	_target(src._target)
 {
 	//safety only for accidental invalid src values
-	check_valid(_gradeToSign, _gradeToExecute);
+	_check_valid(_gradeToSign, _gradeToExecute);
 }
 // Default destructor
 AForm::~AForm(){}
@@ -101,6 +94,13 @@ std::ostream &operator<<(std::ostream &ostream, const AForm &src)
 /* ************************************************************************** */
 /*			MEMBER FUNCTIONS												  */
 /* ************************************************************************** */
+void AForm::_check_valid(int gradeSign, int gradeExecute)
+{
+	if (gradeSign < 1 || gradeExecute < 1)
+		throw AForm::GradeTooHighException();
+	else if (gradeSign > 150 || gradeExecute > 150)
+		throw AForm::GradeTooLowException();
+}
 
 void AForm::beSigned(Bureaucrat &Bur)
 {

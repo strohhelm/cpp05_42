@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   shrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 19:57:47 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/12/18 15:46:27 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/09 15:04:14 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 
 
 //Value constructor
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
-	: AForm("ShrubberyCreationForm", 145, 137, target)
-{
-	std::cout<<*this<<"was constructed!"<<std::endl;
-}
+	: AForm("ShrubberyCreationForm", 145, 137, target){}
 
 // Copy constructor
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm& src) : AForm(src) {}

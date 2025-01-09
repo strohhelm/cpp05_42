@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:20:50 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/12/18 15:45:00 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:35:22 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,8 @@ void	Bureaucrat::signForm(AForm &form)
 					<<" couldn't sign "
 					<<DR<<form.getName()<<R
 					<<" because "
-					<< e.what();
+					<< e.what()
+					<<std::endl;
 		return ;
 	}
 	std::cout<<DG<<_name <<G<< " signed "<< DG<<form.getName()<<X<<std::endl;

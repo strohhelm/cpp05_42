@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 19:47:43 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/12/16 18:22:56 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/09 12:39:24 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ class Form
 		bool				_isSigned;
 		const int			_gradeToSign;
 		const int			_gradeToExecute;
+		void 				check_valid(int gradeSign, int gradeExecute);
 };
-void check_valid(int gradeSign, int gradeExecute);
 std::ostream &operator<<(std::ostream &ostream, const Form &src);
 #endif
