@@ -1,3 +1,6 @@
 cpp05.pdf
 .vscode
 Bureaucrat
+*.d
+*.o
+obj
