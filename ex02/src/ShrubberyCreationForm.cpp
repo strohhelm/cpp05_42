@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 19:57:47 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/09 15:04:14 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/10 21:46:53 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,49 +60,6 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 			throw "failure!";
 	}
 	catch(...){std::cout<<DR<<"Oh opening the file failed!"<<std::endl<<X;std::exit(1);}
-
-	outFile<< "         " << Y << "*" << X << "\n";
-	outFile<< "        " << L << "/\\\\" << X << "\n";
-	outFile<< "       " << G << "/  \\\\" << X << "\n";
-	outFile<< "      " << L << "/ " << R << "o" << L << "  \\\\" << X << "\n";
-	outFile<< "     " << G << "/____\\\\" << X << "\n";
-	outFile<< "    " << L << "/\\  " << R << "o" << L << "  /\\" << X << "\n";
-	outFile<< "   " << G << "/  \\\\" << L << "____" << G << "/  \\\\" << X << "\n";
-	outFile<< "  " << L << "/ " << DR << "o" << L << "   " << G << "\\" << L << "  o  " << G << "\\\\" << X << "\n";
-	outFile<< " " << G << "/____" << L << "____" << G << "\\" << X << "\n";
-	outFile<< "        " << Y << "|" << X << "\n";
-	outFile<< "        " << Y << "|" << X << "\n";
-	outFile<< "\n" << D << "   Merry " << R << "C" << DG << "h" << DR << "r" << P << "i" << LP << "s" << L << "t" << D << "m" << Y << "a" << O << "s" << X << "!" << "\n\n";
-	outFile << "         "  << "*"  << "\n"<<std::endl;
-    outFile << "        " << L << "/\\\\" << X << "\n";
-    outFile << "       " << G << "/  \\\\" << X << "\n";
-    outFile << "      " << L << "/ " << R << "o" << L << "  \\\\" << X << "\n";
-    outFile << "     " << G << "/______\\\\" << X << "\n";
-    outFile << "    " << L << "/\\   " << R << "o" << L << "  /\\\\" << X << "\n";
-    outFile << "   " << G << "/  \\" << L << "    " << G << "/  \\\\" << X << "\n";
-    outFile << "  " << L << "/ " << DR << "o " << L << " " << G << "\\  /" << R << "o    " << G << "\\\\" << X << "\n";
-    outFile << " " << G << "/____" << L << "__\\/_" << G << " " << X << "\n";
-    outFile << "        " << Y << "|" << X << "\n";
-    outFile << "        " << Y << "|" << X << "\n";
-
-    outFile << "\n" << D << "   Merry " << R << "C" << DG << "h" << DR << "r" << P << "i" << LP << "s" << L << "t" << D << "m" << Y << "a" << O << "s" << X << "!" << "\n\n" <<std::endl;
-
-	outFile << Y << "              *\n" << X;
-    outFile << L << "             /\\ \n" << X;
-    outFile << G << "            /  \\\n" << X;
-    outFile << L << "           / " << R << "o" << L << "  \\\n" << X;
-    outFile << G << "          /____\\\n" << X;
-    outFile << L << "         /\\ " << R << "o" << L << " /\\ \n" << X;
-    outFile << G << "        /  \\  /  \\\n" << X;
-    outFile << L << "       / " << DR << "o" << L << "  /\\  " << R << "o" << L << " \\\n" << X;
-    outFile << G << "      /____/__\\____\\\n" << X;
-    outFile << L << "     /\\  " << R << "o" << L << "   " << DG << "o" << L << "    /\\\n" << X;
-    outFile << G << "    /  \\     " << DR << "o" << G << "     /  \\\n" << X;
-    outFile << L << "   / " << R << "o" << L << "   \\_______/ " << R << "o" << L << "   \\\n" << X;
-    outFile << G << "  /____/\\   " << DG << "o" << G << "   /\\____\\\n" << X;
-    outFile << L << "        \\_______/\n" << X;
-    outFile << Y << "           |||\n" << X;
-    outFile << Y << "           |||\n" << X;
 	
 	outFile<<"                                 |L   \n\
 	                                ,' `  \n\

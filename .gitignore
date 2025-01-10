@@ -3,4 +3,7 @@ cpp05.pdf
 Bureaucrat
 *.d
 *.o
-obj
+*/obj
+*/a.out
+*.txt
+.gitignore
