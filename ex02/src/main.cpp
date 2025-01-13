@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 18:22:50 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/10 21:41:18 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/13 14:54:38 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,17 @@ int main (void)
 	Herbert.signForm(Form2);
 	Zaphod.signForm(Form2);
 	Herbert.executeForm(Form2);
+	
 
 	std::cout<<"\n============\n"<<std::endl;
+	Servant.executeForm(Form2);
+	Servant.executeForm(Form2);
+	Servant.executeForm(Form2);
+	Servant.executeForm(Form2);
+	Servant.executeForm(Form2);
+	Servant.executeForm(Form2);
+	Servant.executeForm(Form2);
+	Servant.executeForm(Form2);
 	Servant.executeForm(Form2);
 	
 	

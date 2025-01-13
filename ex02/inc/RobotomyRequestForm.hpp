@@ -10,11 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
 
 #ifndef ROBOTOMYREQUESTFORM_HPP
 #define ROBOTOMYREQUESTFORM_HPP
 
+#include <random>
+#include <ctime>
+#include "AForm.hpp"
 
 class RobotomyRequestForm : public AForm
 {

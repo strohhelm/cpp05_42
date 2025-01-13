@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
 #define PRESIDENTIALPARDONFORM_HPP
+#include "AForm.hpp"
 
 class PresidentialPardonForm : public AForm
 {

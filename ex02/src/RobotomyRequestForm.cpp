@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 19:57:21 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/13 13:11:17 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:03:52 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ RobotomyRequestForm::~RobotomyRequestForm(){}
 
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const 
 {
-	static bool chance = false;
+	std::srand(std::time(0));
+	static bool chance = rand() % 2;
 
-	std::srand(0);
 	_isExecutable(executor.getGrade());
 	std::cout	<<O
 				<<O<<"VRRRRRRRRR— CLUNK... uh-oh. BRRRRRRRRRRZZZT— THUNK-THUNK-THUNK...\n"<<X
@@ -52,7 +52,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 				<<"pause...\n"
 				<<M<<"‘I’m not paid enough for this.’"<<O<<" ... VRRRRRRRRRRZZZ— THUD...\n"
 				<<M<<"‘Oh, great. Now you’re stuck.’" <<X<<std::endl;
-	if ((std::rand() % 2) != 0)
+	if (chance == true)
 	{
 		std::cout<<DG<<_target<<G<<" has been robotomized successfully!"<<X<<std::endl;
 		chance = false;
