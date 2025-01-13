@@ -6,17 +6,15 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 19:12:56 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/13 13:12:33 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:33:50 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-#include "AForm.hpp"
-#include <fstream>
 
 #ifndef SHRUBBERYCREATION_FORM_HPP
 #define SHRUBBERYCREATIONFORM_HPP
 
+#include <fstream>
+#include "AForm.hpp"
 
 class ShrubberyCreationForm : public AForm
 {
