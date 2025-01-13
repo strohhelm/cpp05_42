@@ -6,13 +6,13 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 19:12:56 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/13 15:05:03 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:29:31 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
-#ifndef SHRUBBERYCREATION_FORM_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
 #define SHRUBBERYCREATIONFORM_HPP
 #include <fstream>
 #include "AForm.hpp"
