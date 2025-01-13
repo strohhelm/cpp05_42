@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 19:55:25 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/09 12:39:08 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:06:49 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,17 +53,17 @@ Form::~Form(){}
 /* ************************************************************************** */
 
 
-const char *Form::GradeTooHighException::what(void) const throw()
+const char *Form::GradeTooHighException::what(void) const noexcept
 {
 	return ("\033[31mFORM ERROR! Grade too high!\n\033[0m");
 }
 
-const char *Form::GradeTooLowException::what(void) const throw()
+const char *Form::GradeTooLowException::what(void) const noexcept
 {
 	return ("\033[31mFORM ERROR! Grade too low!\n\033[0m");
 }
 
-const char *Form::AlreadySignedException::what(void) const throw()
+const char *Form::AlreadySignedException::what(void) const noexcept
 {
 	return ("\033[31mFORM ERROR! This form is already signed!\n\033[0m");
 }

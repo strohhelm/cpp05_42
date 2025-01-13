@@ -25,7 +25,7 @@ class RobotomyRequestForm : public AForm
 	~RobotomyRequestForm();
 	RobotomyRequestForm &operator=(RobotomyRequestForm &src) = delete;
 	
-	void	execute(Bureaucrat const & executor) const;
+	void	execute(Bureaucrat const & executor) const override;
 };
 
 #endif

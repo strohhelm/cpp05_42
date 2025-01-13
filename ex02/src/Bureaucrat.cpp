@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:20:50 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/12 14:51:17 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:09:41 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,12 @@ Bureaucrat::~Bureaucrat(){}
 /* ************************************************************************** */
 
 
-const char *Bureaucrat::GradeTooHighException::what() const throw()
+const char *Bureaucrat::GradeTooHighException::what() const noexcept
 {
 	return ("\033[31mBUREAUCRAT ERROR! Grade too high! max value: 1\n\033[0m");
 }
 
-const char *Bureaucrat::GradeTooLowException::what() const throw()
+const char *Bureaucrat::GradeTooLowException::what() const noexcept
 {
 	return ("\033[31mBUREAUCRAT ERROR! Grade too low! min value: 150\n\033[0m");
 }

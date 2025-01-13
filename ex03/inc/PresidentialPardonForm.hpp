@@ -24,7 +24,7 @@ class PresidentialPardonForm : public AForm
 	~PresidentialPardonForm();
 	PresidentialPardonForm &operator=(PresidentialPardonForm &src) = delete;
 	
-	void	execute(Bureaucrat const & executor) const;
+	void	execute(Bureaucrat const & executor) const override;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 19:55:25 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/09 14:37:44 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:08:58 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,21 +55,21 @@ AForm::~AForm(){}
 /* ************************************************************************** */
 
 
-const char *AForm::GradeTooHighException::what(void) const throw()
+const char *AForm::GradeTooHighException::what(void) const noexcept
 {
 	return ("\033[31mERROR! Grade too high!\033[0m");
 }
 
-const char *AForm::GradeTooLowException::what(void) const throw()
+const char *AForm::GradeTooLowException::what(void) const noexcept
 {
 	return ("\033[31mERROR! Grade too low!\033[0m");
 }
 
-const char *AForm::AlreadySignedException::what(void) const throw()
+const char *AForm::AlreadySignedException::what(void) const noexcept
 {
 	return ("\033[31mERROR! This Aform is already signed!\033[0m");
 }
-const char *AForm::NotSignedException::what(void) const throw()
+const char *AForm::NotSignedException::what(void) const noexcept
 {
 	return ("\033[31mERROR! This Form is not signed!\033[0m");
 }

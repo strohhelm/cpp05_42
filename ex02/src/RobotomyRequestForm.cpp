@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 19:57:21 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/09 15:49:59 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:11:17 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ RobotomyRequestForm::~RobotomyRequestForm(){}
 /*			MEMBER FUNCTIONS												  */
 /* ************************************************************************** */
 
-void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
+void	RobotomyRequestForm::execute(Bureaucrat const & executor) const 
 {
 	static bool chance = false;
 

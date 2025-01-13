@@ -53,13 +53,13 @@ class AForm
 		AForm& operator=(const AForm &src) = delete;
 		
 		class GradeTooHighException : public std::exception
-				{virtual const char *what(void) const throw();};
+				{const char *what(void) const noexcept override;};
 		class GradeTooLowException : public std::exception
-				{virtual const char *what(void) const throw();};
+				{const char *what(void) const noexcept override;};
 		class AlreadySignedException : public std::exception
-				{virtual const char *what(void) const throw();};
+				{const char *what(void) const noexcept override;};
 		class NotSignedException : public std::exception
-				{virtual const char *what(void) const throw();};
+				{const char *what(void) const noexcept override;};
 
 		std::string	getName(void) const;
 		std::string	getSigned(void) const;

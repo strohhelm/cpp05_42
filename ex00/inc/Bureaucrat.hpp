@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 14:30:59 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/09 12:32:58 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:00:40 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ class Bureaucrat
 
 		class GradeTooHighException : public std::exception
 		{
-				virtual const char *what() const throw();
+				const char *what() const noexcept override;
 		};
 		class GradeTooLowException : public std::exception
 		{
-				virtual const char *what() const throw();
+				const char *what() const noexcept override;
 		};
 
 	protected:
