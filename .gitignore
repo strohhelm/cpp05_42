@@ -1,9 +1,0 @@
-cpp05.pdf
-.vscode
-Bureaucrat
-*.d
-*.o
-*/obj
-*/a.out
-*.txt
-.gitignore
