@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 13:11:16 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/13 14:21:35 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:00:07 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ AForm *Intern::makeForm(std::string name, std::string target)
 			return (Form[i](target));
 		}
 	}
-	std::cout<<R<<"Intern doesnt know what a "<<DR<<name<<" is and panics!"<<X<<std::endl;
+	std::cout<<R<<"Intern doesnt know what a "<<DR<<name<<R<<" is and panics!"<<X<<std::endl;
 	return nullptr;
 }
