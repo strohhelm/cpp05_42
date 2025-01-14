@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 18:22:50 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/12 14:59:00 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:58:41 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ int main (void)
 			delete p;
 			std::cout <<"\n==============\n"<<std::endl;
 		}
-	} 
+	}
+	// Intern fool(someRando);
+	// Intern foolo;
+	// foolo = someRando;
+	
 	return 0;
 }
