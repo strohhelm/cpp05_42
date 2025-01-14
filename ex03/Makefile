@@ -6,7 +6,7 @@
 #    By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/05 14:29:43 by pstrohal          #+#    #+#              #
-#    Updated: 2025/01/12 14:29:20 by pstrohal         ###   ########.fr        #
+#    Updated: 2025/01/14 13:51:07 by pstrohal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,7 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
+	@rm -rf *_shrubbery
 
 re: fclean all
 

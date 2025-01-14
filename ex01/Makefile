@@ -6,7 +6,7 @@
 #    By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/05 14:29:43 by pstrohal          #+#    #+#              #
-#    Updated: 2024/12/16 17:35:16 by pstrohal         ###   ########.fr        #
+#    Updated: 2025/01/14 13:52:02 by pstrohal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ INCLUDES = -I$(INC_DIR)
 
 all: $(NAME)
 -include $(DEP)
-
+	
 
 $(NAME):$(OBJ)
 	@$(CC) $^ -o $@ -g

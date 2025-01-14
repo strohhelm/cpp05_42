@@ -50,7 +50,7 @@ class AForm
 		AForm(const AForm& src);
 		AForm(std::string name, int gradeSign, int gradeExecute, std::string target);
 		virtual ~AForm();
-		AForm& operator=(const AForm &src) = delete;
+		AForm& operator=(const AForm &src) = delete; //bc const variables
 		
 		class GradeTooHighException : public std::exception
 				{const char *what(void) const noexcept override;};
@@ -65,6 +65,7 @@ class AForm
 		std::string	getSigned(void) const;
 		int			getGradeSign(void) const;
 		int			getGradeExecute(void) const;
+		std::string	getTarget(void) const;
 
 		void			beSigned(Bureaucrat &Bur);
 		virtual void	execute(Bureaucrat const &executor) const = 0;

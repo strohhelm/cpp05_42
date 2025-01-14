@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 19:55:25 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/13 13:08:58 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:04:06 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,8 @@ std::ostream &operator<<(std::ostream &ostream, const AForm &src)
 	ostream << "AForm name: "<<Y<<src.getName()<< X<<" | ";
 	ostream << "Signed: " << B<<src.getSigned()<<X<<" | ";
 	ostream << "Grade to Sign: " << B<<src.getGradeSign()<<X<<" | ";
-	ostream << "Grade to Execute: " << B<<src.getGradeExecute()<<X<<" ";
+	ostream << "Grade to Execute: " << B<<src.getGradeExecute()<<X<<" | ";
+	ostream << "target: "<< DR << src.getTarget()<<X<<std::endl;
 	return ostream;
 }
 
@@ -121,6 +122,11 @@ void	AForm::_isExecutable(int grade) const
 std::string	AForm::getName(void) const
 {
 	return (_name);
+}
+
+std::string	AForm::getTarget(void) const
+{
+	return(_target);
 }
 
 std::string	AForm::getSigned(void) const

@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 19:57:21 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/13 15:03:52 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:45:54 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ RobotomyRequestForm::~RobotomyRequestForm(){}
 
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const 
 {
-	std::srand(std::time(0));
+	std::srand(std::time(nullptr));
 	static bool chance = rand() % 2;
 
 	_isExecutable(executor.getGrade());
@@ -50,16 +50,18 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 				<<M<<"‘No, no, no! That’s not a good noise!’"<<O<<"... KRRRRRRCHHHHHH— sputter... \n"<<X
 				<<M<<"‘I swear, this thing has a mind of its own.’"<<O<<" ... BRRRRRRRRRR-KRRRCHHH-CHNK-CHNK... \n"<<X
 				<<"pause...\n"
-				<<M<<"‘I’m not paid enough for this.’"<<O<<" ... VRRRRRRRRRRZZZ— THUD...\n"
-				<<M<<"‘Oh, great. Now you’re stuck.’" <<X<<std::endl;
+				<<M<<"‘I’m not paid enough for this.’"<<O<<" ... VRRRRRRRRRRZZZ— THUD..."<<X<<std::endl;
+
 	if (chance == true)
 	{
-		std::cout<<DG<<_target<<G<<" has been robotomized successfully!"<<X<<std::endl;
+		std::cout	<<M<<"OMG finally it worked!! Hurray!\n\n"
+					<<DG<<_target<<G<<" has been robotomized successfully!"<<X<<std::endl;
 		chance = false;
 	}
 	else
 	{
-		std::cout<<DR<<_target<<R<<" has not been robotomized. It failed miserably!"<<X<<std::endl;
+		std::cout	<<M<<"‘Oh, great. Now you’re stuck.’\n\n"
+					<<DR<<_target<<R<<" has not been robotomized. It failed miserably!"<<X<<std::endl;
 		chance = true;
 	}
 	return ;

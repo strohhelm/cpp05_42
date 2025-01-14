@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 19:57:47 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/13 13:11:20 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:40:08 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){}
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	std::ofstream	outFile;
-	std::string		outname = _target + "_shrubbery.txt";
+	std::string		outname = _target + "_shrubbery";
 
 	_isExecutable(executor.getGrade());
 

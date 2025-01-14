@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 19:47:43 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/13 15:39:10 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:36:19 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ class Form
 		std::string	getSigned(void) const;
 		int			getGradeSign(void) const;
 		int			getGradeExecute(void) const;
-
 		void		beSigned(Bureaucrat &Bur);
 		
 	private:

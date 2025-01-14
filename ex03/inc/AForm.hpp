@@ -64,7 +64,8 @@ class AForm
 		std::string	getName(void) const;
 		std::string	getSigned(void) const;
 		int			getGradeSign(void) const;
-		int			getGradeExecute(void) const;
+		int			getGradeExecute(void) const;	
+		std::string	getTarget(void) const;
 
 		void			beSigned(Bureaucrat &Bur);
 		virtual void	execute(Bureaucrat const &executor) const = 0;

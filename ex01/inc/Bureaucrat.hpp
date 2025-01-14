@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 14:30:59 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/13 15:37:09 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:34:06 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ class Bureaucrat
 		//member functions
 		void			signForm(Form &form);
 		std::string		getName(void) const;
-		int	getGrade(void) const;
+		int				getGrade(void) const;
 		void			incrementGrade(void);
 		void			decrementGrade(void);
 		
@@ -68,8 +68,8 @@ class Bureaucrat
 		};
 
 	protected:
-		const std::string _name;
-		int _grade;
+		const std::string	_name;
+		int 				_grade;
 };
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj);
 

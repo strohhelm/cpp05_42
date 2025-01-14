@@ -6,7 +6,7 @@
 #    By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/05 14:29:43 by pstrohal          #+#    #+#              #
-#    Updated: 2024/12/18 15:28:46 by pstrohal         ###   ########.fr        #
+#    Updated: 2025/01/14 13:51:15 by pstrohal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,8 +55,11 @@ $(OBJ_DIR)/%.o: %.cpp
 clean:
 	@rm -rf $(OBJ_DIR)
 
+
+
 fclean: clean
 	@rm -rf $(NAME)
+	@rm -rf *_shrubbery
 
 re: fclean all
 

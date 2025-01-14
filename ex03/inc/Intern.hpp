@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 13:00:11 by pstrohal          #+#    #+#             */
-/*   Updated: 2025/01/13 16:16:00 by pstrohal         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:03:23 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Intern {
 		Intern& operator=(const Intern &src) = delete;
 		
 		AForm* makeForm(std::string name, std::string target);
-	private:
+
 };
 
 #endif
