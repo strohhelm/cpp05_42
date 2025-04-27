@@ -55,7 +55,7 @@ The purpose of these c++ projects is to get introduced into OOP. We are allowed 
 ### My thoughts:
 - That was fun but a lot of writing the classes as they had some really wierd behaviours and intteractions with the bureaucrats.
 
-  ## 🔶 ex03 At least this beats coffee-making..
+## 🔶 ex03 At least this beats coffee-making..
 ### Ojective: Implement the Intern class. The intern has one important capacity: the makeForm() function. Avoid using a if/elseif/else forest.
 ### Usage:
   ```
